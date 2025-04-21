@@ -1,5 +1,7 @@
-import { Component, input, Input, signal } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, inject, input, Input, signal, WritableSignal } from '@angular/core';
+import { Observable, single } from 'rxjs';
+import {PlanshiftService} from '../../services/planshift.service'
+
 
 @Component({
   selector: 'app-monthly-shift',
@@ -10,15 +12,19 @@ import { Observable } from 'rxjs';
 })
 export class MonthlyShiftComponent {
   monthNumber = signal(1);
+  amountOfDays= signal(0);
+  testTaur = signal("test");
+  planshiftService:PlanshiftService = inject(PlanshiftService)
 
+  
     @Input()
     set id(id: number) {
       this.monthNumber.set(id)
     } 
 
     ngOnInit(): void {
-     
-      
+      this.amountOfDays.set(this.planshiftService.getDaysInMonth(this.monthNumber()))
+      this.planshiftService.getTestTaur().then(m => this.testTaur.set(m))
     } 
 
 }
