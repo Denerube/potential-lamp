@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { invoke } from '@tauri-apps/api/core';
+import { ShiftWorkerModel } from '../models/ShiftWorkerModel';
 
 
 @Injectable({
@@ -18,8 +19,16 @@ export class PlanshiftService {
     return new Map(Object.entries(result)) as unknown as Map<number,string>
   }
 
-   async getTestTaur(){
-    let result = await invoke("get_all_shift_workers");
-    return result;
+  private BuildShiftWorker (input:any):ShiftWorkerModel{
+    let map = new Map(Object.entries(input["working_hours_per_date"])) as unknown as Map<number,number>
+    return new ShiftWorkerModel(input["parent"]["id"],input["parent"]["name"],map)
+  }
+
+ 
+
+   async getTestTaur():Promise<ShiftWorkerModel[]>{
+    let result:any[] = await invoke("get_all_shift_workers")as any[];
+    return result.map(i => this.BuildShiftWorker(i))
+
   }
 }

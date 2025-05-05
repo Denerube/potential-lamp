@@ -1,4 +1,6 @@
-class ShiftPerDayModel {
+import { ShiftWorkerModel } from "./ShiftWorkerModel"
+
+export class ShiftPerDayModel {
     aantalUrenNeeded:number
     aantalUrenFilled:number
     id:number

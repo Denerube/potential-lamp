@@ -1,12 +1,12 @@
-class ShiftWorkerModel extends WorkerModel {
-    workingHoursPerDate:Map<Date,number>
+import { WorkerModel } from "./WorkerModel";
+
+export class ShiftWorkerModel extends WorkerModel {
+    workingHoursPerDate:Map<number,number>
 
     constructor()
-    constructor(id:number,name:string,workingHoursPerDate:Map<Date,number>,)
-    constructor(id?:number,name?:string,workingHoursPerDate?:Map<Date,number>,) {
+    constructor(id:number,name:string,workingHoursPerDate:Map<number,number>,)
+    constructor(id?:number,name?:string,workingHoursPerDate?:Map<number,number>,) {
         super(id ?? 0, name ?? ""); 
-        this.id = id ?? 0
-        this.name = name ?? "";
-        this.workingHoursPerDate = workingHoursPerDate ?? new Map<Date,number>;
+        this.workingHoursPerDate = workingHoursPerDate ?? new Map<number,number>;
       }
 }

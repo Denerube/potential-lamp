@@ -1,4 +1,4 @@
-class WorkerModel {
+export class WorkerModel {
     id:number
     name:string
     
