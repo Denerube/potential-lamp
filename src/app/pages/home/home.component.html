@@ -1,0 +1,10 @@
+<p>Welcome home</p>
+<div class="item-grid">
+        @for (entry of months(); track $index){
+            <div class="item">
+                <a [routerLink]="['/mothlyShift',{id:entry[0]}]" routerLinkActive="active" ariaCurrentWhenActive="page">
+                    {{entry[1]}}
+                </a>
+            </div>
+        }
+</div>

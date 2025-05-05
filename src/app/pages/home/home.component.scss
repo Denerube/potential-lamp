@@ -1,0 +1,19 @@
+.item-grid {
+    $item-width: 150px; // Define variables here or at the top level
+    $item-gap: 10px;
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); // Flexible column layout
+    gap: $item-gap; // Use the defined variable
+  
+    @media (min-width: (4 * $item-width + 3 * $item-gap)) { // Now the variables are defined
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .item {
+      // Style your item elements here
+      border: 1px solid #ccc;
+      padding: 15px;
+      text-align: center;
+    }
+  }
