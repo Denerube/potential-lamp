@@ -1,5 +1,11 @@
 <p>monthly-shift works!</p>
-<p>{{monthNumber()}}</p>
-<p>amount of days in this month: {{amountOfDays()}}</p>
-<p>{{testTaur()}}</p>
+
+<div class="date-grid">
+    @for (entry of amountOfDays(); track $index){
+        <div class="date">
+            <app-per-day/>
+        </div>
+    }
+</div>
+ 
  
