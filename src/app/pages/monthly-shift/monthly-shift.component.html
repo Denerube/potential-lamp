@@ -3,9 +3,12 @@
 <div class="date-grid">
     @for (entry of amountOfDays(); track $index){
         <div class="date">
-            <app-per-day/>
+            <app-per-day [dayNumber]=entry [monthNumber]="monthNumber()" />
         </div>
     }
+</div>
+<div class="worker-grid">
+    <app-worker-list/>
 </div>
  
  

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-per-day',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './per-day.component.scss'
 })
 export class PerDayComponent {
+  dayNumber = input(0);
+  monthNumber = input(0);
+  year = signal(new Date().getFullYear());
+  
+
 
 }

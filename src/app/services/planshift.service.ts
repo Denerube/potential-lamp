@@ -26,7 +26,7 @@ export class PlanshiftService {
 
  
 
-   async getTestTaur():Promise<ShiftWorkerModel[]>{
+   async getAllWorkers():Promise<ShiftWorkerModel[]>{
     let result:any[] = await invoke("get_all_shift_workers")as any[];
     return result.map(i => this.BuildShiftWorker(i))
 

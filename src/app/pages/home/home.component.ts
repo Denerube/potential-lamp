@@ -19,10 +19,6 @@ export class HomeComponent {
     this.planshiftService.getMothsMap().then((m)=>{
       this.months.set(m)
     });
-
-    this.planshiftService.getTestTaur().then((m)=>{
-      console.log(m);
-    })
   } 
 
 }
