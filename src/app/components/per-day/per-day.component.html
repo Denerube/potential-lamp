@@ -1,1 +1,6 @@
-<p>Datum : {{dayNumber()+1}}/{{monthNumber()}}/{{year()}}</p>
+<div class="shiftPerDayStyle filled-{{shiftPerDay().filled}}">
+    <p>Datum : {{dayNumber()+1}}/{{monthNumber()}}/{{year()}}</p>
+    <p>Hours needed : {{shiftPerDay().aantalUrenFilled}}/{{shiftPerDay().aantalUrenNeeded}}</p>
+</div>
+
+ 

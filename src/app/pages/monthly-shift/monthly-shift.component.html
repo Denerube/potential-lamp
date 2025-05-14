@@ -1,4 +1,3 @@
-<p>monthly-shift works!</p>
 
 <div class="date-grid">
     @for (entry of amountOfDays(); track $index){
@@ -7,8 +6,12 @@
         </div>
     }
 </div>
-<div class="worker-grid">
-    <app-worker-list/>
+
+<div class="worker-list" >
+@for (entry of workers(); track $index){
+    <app-worker-item [worker]="entry"/> 
+}
 </div>
- 
+
+
  
