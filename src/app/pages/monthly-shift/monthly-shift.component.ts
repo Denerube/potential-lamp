@@ -3,14 +3,13 @@ import {PlanshiftService} from '../../services/planshift.service'
 import { PerDayComponent } from '../../components/per-day/per-day.component';
 import { ShiftWorkerModel } from '../../models/ShiftWorkerModel';
 import { WorkerItemComponent } from '../../components/worker-item/worker-item.component';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import { EqualWidthDirective } from '../../directives/equal-width.directive';
+import {CdkDrag, CdkDragDrop, CdkDropList, DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @Component({
   selector: 'app-monthly-shift',
   standalone: true,
-  imports: [PerDayComponent,WorkerItemComponent,DragDropModule,EqualWidthDirective],
+  imports: [PerDayComponent,WorkerItemComponent,DragDropModule,CdkDropList,CdkDrag],
   templateUrl: './monthly-shift.component.html',
   styleUrl: './monthly-shift.component.scss'
 })
@@ -19,6 +18,11 @@ export class MonthlyShiftComponent {
   amountOfDays= signal<number[]>([]);
   planshiftService:PlanshiftService = inject(PlanshiftService)
   workers = signal<ShiftWorkerModel[]>([]);
+
+  drop(event: CdkDragDrop<string[]>) {
+    console.log(event.item)
+
+  }
 
   @Input()
   set id(id: number) {
