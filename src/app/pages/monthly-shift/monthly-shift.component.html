@@ -2,9 +2,7 @@
 <div cdkDropListGroup>
     <div class="date-grid" >
         @for (entry of amountOfDays(); track $index){
-            <div class="date" >
-                <app-per-day [dayNumber]=entry [monthNumber]="monthNumber()"/>
-            </div>
+            <app-per-day [dayNumber]=entry [monthNumber]="monthNumber()"/>
         } 
     </div>
 
