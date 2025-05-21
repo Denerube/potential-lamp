@@ -9,7 +9,7 @@ import {CdkDrag, CdkDragDrop, CdkDropList, DragDropModule} from '@angular/cdk/dr
 @Component({
   selector: 'app-monthly-shift',
   standalone: true,
-  imports: [PerDayComponent,WorkerItemComponent,DragDropModule,CdkDropList,CdkDrag],
+  imports: [PerDayComponent,WorkerItemComponent,DragDropModule,CdkDropList],
   templateUrl: './monthly-shift.component.html',
   styleUrl: './monthly-shift.component.scss'
 })
@@ -18,11 +18,6 @@ export class MonthlyShiftComponent {
   amountOfDays= signal<number[]>([]);
   planshiftService:PlanshiftService = inject(PlanshiftService)
   workers = signal<ShiftWorkerModel[]>([]);
-
-  drop(event: CdkDragDrop<string[]>) {
-    console.log(event.item)
-
-  }
 
   @Input()
   set id(id: number) {

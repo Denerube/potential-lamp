@@ -1,6 +1,6 @@
 import { Component, input, Input, signal } from '@angular/core';
 import { ShiftPerDayModel } from '../../models/ShiftPerDayModel';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, DragDropModule} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-per-day',
@@ -14,6 +14,11 @@ export class PerDayComponent {
   monthNumber = input(0);
   year = signal(new Date().getFullYear());
   shiftPerDay = signal(new ShiftPerDayModel());
+
+   drop(event: CdkDragDrop<string[]>) {
+    console.log(event.item)
+
+  }
 
   constructor(){
     this.shiftPerDay().shiftDate = new Date(this.year(),this.monthNumber(),this.dayNumber())

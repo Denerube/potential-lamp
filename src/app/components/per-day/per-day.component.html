@@ -1,4 +1,4 @@
-<div class="shiftPerDayStyle filled-{{shiftPerDay().filled}}">
+<div class="shiftPerDayStyle filled-{{shiftPerDay().filled}}" cdkDropList (cdkDropListDropped)="drop($event)">
     <p>Datum : {{dayNumber()+1}}/{{monthNumber()}}/{{year()}}</p>
     <p>Hours needed : {{shiftPerDay().aantalUrenFilled}}/{{shiftPerDay().aantalUrenNeeded}}</p>
 </div>
