@@ -16,7 +16,7 @@ export class PerDayComponent {
   shiftPerDay = signal(new ShiftPerDayModel());
 
    drop(event: CdkDragDrop<string[]>) {
-    console.log(event.item)
+    console.log(event.item.data)
 
   }
 

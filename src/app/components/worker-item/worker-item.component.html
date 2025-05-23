@@ -1,4 +1,5 @@
-<div class="worker-item" cdkDrag appEqualWidth>
+<div class="worker-item" cdkDrag appEqualWidth [cdkDragData]="worker()">
     <p>{{worker().name}}</p>
+    <input type="hidden" value="{{worker().id}}">
 </div>
 
