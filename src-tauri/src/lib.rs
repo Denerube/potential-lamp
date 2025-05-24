@@ -5,18 +5,18 @@ mod services;
 #[tauri::command]
 fn get_moths_map() -> HashMap<u32, String> {
     let  moths_map = HashMap::from([
-        (1, "jan".to_owned()),
-        (2, "feb".to_owned()),
-        (3, "mar".to_owned()),
-        (4, "apr".to_owned()),
-        (5, "may".to_owned()),
-        (6, "jun".to_owned()),
-        (7, "jul".to_owned()),
-        (8, "aug".to_owned()),
-        (9, "sep".to_owned()),
-        (10, "oct".to_owned()),
-        (11, "nov".to_owned()),
-        (12, "dec".to_owned())
+        (0, "jan".to_owned()),
+        (1, "feb".to_owned()),
+        (2, "mar".to_owned()),
+        (3, "apr".to_owned()),
+        (4, "may".to_owned()),
+        (5, "jun".to_owned()),
+        (6, "jul".to_owned()),
+        (7, "aug".to_owned()),
+        (8, "sep".to_owned()),
+        (9, "oct".to_owned()),
+        (10, "nov".to_owned()),
+        (11, "dec".to_owned())
     ]);
      moths_map
 }

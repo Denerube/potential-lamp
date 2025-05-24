@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ShiftDayComponent } from './shift-day.component';
+
+describe('ShiftDayComponent', () => {
+  let component: ShiftDayComponent;
+  let fixture: ComponentFixture<ShiftDayComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ShiftDayComponent]
+    })
+    .compileComponents();
+    
+    fixture = TestBed.createComponent(ShiftDayComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

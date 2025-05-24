@@ -1,6 +1,7 @@
 <div class="date shiftPerDayStyle filled-{{shiftPerDay().filled}}" cdkDropList (cdkDropListDropped)="drop($event)">
-    <p>Datum : {{dayNumber()+1}}/{{monthNumber()}}/{{year()}}</p>
+    <p>Datum : {{adjustedDayNumber()}}/{{adjustedMonthNumber()}}/{{year()}}</p>
     <p>Hours needed : {{shiftPerDay().aantalUrenFilled}}/{{shiftPerDay().aantalUrenNeeded}}</p>
+    <a [routerLink]="['/shiftDay',{date:shiftPerDay().shiftDate}]" routerLinkActive="active" ariaCurrentWhenActive="page">details</a>
 </div>
 
  
